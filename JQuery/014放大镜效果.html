@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<link rel="stylesheet" href="css/base.css" />
+		<style>
+			#spic,#bpic{
+				width: 300px;
+				height: 300px;
+				border: 1px solid deeppink;
+			}
+			#spic{
+				position: relative;
+				margin: 100px auto;
+			}
+			#s{
+				width: 300px;
+				height: 300px;				
+			}
+			#bpic{
+				position: absolute;
+				left:302px;
+				top:0;
+				overflow: hidden;
+			}
+			#b{
+				width: 900px;
+				height: 900px;	
+				position: absolute;
+				left:0px;
+				top:0;								
+			}
+			#square{
+				width: 100px;
+				height: 100px;	
+				position: absolute;
+				left:0px;
+				top:0;
+				background-color: deepskyblue;	
+				opacity: 0.5;							
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="spic">
+			<img src="img/PIC/2.jpg" id="s"/>
+			<div id="bpic">
+				<img src="img/PIC/2.jpg" id="b"/>
+			</div>
+			<div id="square"></div>
+		</div>
+		<script>
+			//01.布局
+			//02.监听鼠标在 spic上移动的事件  
+			//   获取到鼠标的坐标 改变 square的位置
+			//   判断 left top
+			$('#spic').mousemove(function(event){
+				//console.log( event.clientX,event.clientY )
+				//console.log( $('#spic').offset().left,$('#spic').offset().top)
+				
+				var nowleft = Math.floor(event.clientX - $('#spic').offset().left)-50;
+				var nowtop  = event.clientY - $('#spic').offset().top-50;
+				console.log( nowleft,nowtop )
+				
+				if(nowleft<0){
+					nowleft = 0 ;
+				}
+				if(nowleft>200){
+					nowleft = 200 ;
+				}				
+				if(nowtop<0){
+					nowtop = 0 ;
+				}				
+				if(nowtop>200){
+					nowtop = 200 ;
+				}				
+				
+				$('#square').css({
+					'top':nowtop,
+					'left':nowleft
+				})
+				$('#b').css({
+					'top':-nowtop*3,
+					'left':-nowleft*3
+				})				
+				
+				
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<title></title>
+	</head>
+	<body>
+		<p id="zero">0000000000</p>
+		<script>
+			var oh1 = $('<h1>动态创建的h1</h1>');	
+			console.log(oh1)
+			$(document.body).append(oh1)
+			var oh2 = $('<h2>2342434</h2>')
+			console.log(oh2)
+			//父 添加 子
+			$(document.body).append(oh2)
+			//子 添加给父
+			oh2.appendTo($(document.body))
+			
+			
+			var inf = [
+		     { name:"赵四儿",
+		       age:48,
+		       sex:'男'
+		      },
+		     { name:"老白",
+		       age:26,
+		       sex:'男'
+		      },
+		     { name:"佟湘玉",
+		       age:28,
+		       sex:'女'
+		     } 		
+		]
+			for(var i = 0;i<inf.length;i++){
+				console.log(inf[i]);
+				var str = `${inf[i].name}是个${inf[i].sex}的今年${inf[i].age}岁`;
+				var h = $('<h1>'+str+'</h1>')
+				console.log(h)
+				$(document.body).append(h)
+				
+			}
+			
+			//.before
+			$('#zero').before($('<p>-1</p>'))
+			//添加弟弟节点
+			$('#zero').after($('<p>11111111</p>'))
+			//删除
+//			$('#zero').remove();
+			//清空
+			$('#zero').empty();
+			//把选中的节点 替换成 某一个节点
+			//$('#zero').replaceWith($('<h2>22222222222</h2>'));
+			//用某一个节点 替换选中的节点
+			$('<h2>22222222222</h2>').replaceAll($('#zero'))
+		</script>
+	</body>
+</html>

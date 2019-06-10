@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#gBox{
+				width: 100%;
+				box-sizing: border-box;
+				padding: 20px;
+				background: yellow;
+			}
+			.goods{
+				width: 192px;
+				height: 278px;
+				padding: 3px;
+				/*background: orange;*/
+				border: 1px solid black;
+				background: ghostwhite;
+				float: left;
+			}
+			.goods h4{
+				line-height: 28px;
+			}
+			.gPic{
+				width: 192px;
+				height: 192px;				
+			}
+			.gInf{
+				font-size: 12px;
+				color: darkgray;
+				line-height: 18px;
+			}
+			.bottom{
+				font-size: 12px;
+				color: deeppink;
+				/*background: green;*/	
+				height:30px ;
+						
+			}
+			.price{
+				font-size: 22px;
+				color: deeppink;
+				float: left;
+				display: inline-block;				
+			}
+			.buy{
+				font-size: 13px;
+				color: white;				
+				border-radius:3px;
+				background: deeppink;
+				float: right;
+				padding: 5px 10px;
+				margin-top: 3px;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script type="text/javascript" src="js/koala.js" ></script>
+	</head>
+	<body>
+		<div id="gBox">
+		<div class="goods">
+			<img src="img/koala/1.jpg" class="gPic"/>
+			<h4 class="gName">hhhhhhh</h4>
+			<p class="gInf">hjsadhjshdj</p>
+			<div class="bottom">
+				<span class="price">￥62</span>
+				<div class="buy">立即购买</div>
+			</div>			
+		</div>			
+		</div>
+		<script>
+		    //window.onload
+			$(function(){
+				console.log(srr)
+				$.each(srr,function(index,data){
+					console.log(data)
+					var str=`<div class="goods">
+								<img src="${data.src}" class="gPic"/>
+								<h4 class="gName">${data.name}</h4>
+								<p class="gInf">${data.inf}</p>
+								<div class="bottom">
+									<span class="price">${data.price}</span>
+									<div class="buy">立即购买</div>
+								</div>			
+							</div>`;
+				$('#gBox').append(str);
+				});
+			})
+		</script>
+	</body>
+</html>

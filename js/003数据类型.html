@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//01.undefined
+			var a;
+			console.log(a)
+			//02.null;
+			var b = null;
+			console.log(b)
+			//03.布尔值true/false
+			var dui = true;
+			//04.Number
+			var num = 3123345;
+			console.log( num+1 )
+			//05.String 字符串 字符串和数字相加 拼接
+			var str1 = '<b style="color:red;">';
+			var str2 = '</b>';
+			var result = str1+num+str2;
+			console.log(result);
+			document.write(result)
+			//对象Object
+			//01.构造函数
+			var obj = new Object();
+			console.log(obj);
+			//02.字面量（赋值）
+			var obj2 = {name:"赵四儿",
+						age:48,
+						sex:"boy",
+						marry:true,
+						ho:function(){
+							alert('不如跳舞！');
+						} , 
+				};
+			var str3 = obj2.name+'今年'+obj2.age+'岁，是个'+obj2.sex+'。';
+			console.log(str3);
+			document.write(str3);
+			setTimeout(function(){
+				obj2.ho();
+			},1000)
+			obj2.hate = '谢广坤';
+			console.log(obj2)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表单</title>
+	</head>
+	<body>
+		文本输入框：<input type="text" value="请输入您的用户名"/><br />
+		密码输入框：<input type="password" placeholder="请输入您的密码"/><br />
+		
+		<!--disabled="disabled"禁用按钮 属性名=属性值的时候可以省略属性值-->
+		按钮：<input type="button" value="登录" disabled /><button>登录</button><br />
+		多选框:<input type="checkbox" />语文 <input type="checkbox" />数学<br />
+		
+		<input type="color" /> <input type="date" />
+		<br />
+		
+		<!--单选框-->
+		<input type="radio" name="sex" />男生
+		<input type="radio" name="sex" />女生
+		<br />
+		
+		<!--checked 默认选项-->
+		选择你最喜欢的科目：
+		<input type="radio" name="sub" />HTML
+		<input type="radio" name="sub" />CSS
+		<input type="radio" name="sub" />JS
+		<input type="radio" name="sub" checked="checked"/>JQ
+		<br />
+		
+		<!--下拉菜单 selected为默认值 optgroup为项目组-->
+		<select>
+			<optgroup label="北方城市">
+				<option>吉林</option>
+			    <option selected="selected">辽宁</option>
+			</optgroup>
+			<optgroup label="南方城市">
+			    <option>湖南</option>
+			    <option>广州</option>
+			</optgroup>
+		</select>
+		<br />
+		
+		<!--多行文本域 resize: none不可拖拽 cols横向 rows纵向-->
+		<textarea style="resize: none;" cols="100" rows="5"></textarea>
+		
+		<form name="setup" method="post" action="#">
+			<!--传值name属性必须有-->
+			文本输入框：<input type="text" value="请输入用户名" name="user"/><br />
+			密码输入框：<input type="password" placeholder="请输入密码" name="pw"/><br />
+			<input type="submit" value="ok"/>
+		</form>
+		
+	</body>
+</html>

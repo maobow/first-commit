@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>2D变形</title>
+		<style type="text/css">
+			.box{
+				width: 200px;
+				height: 200px;
+				margin: 0 auto;
+				float: left;
+				transition: 0.2s;
+			}
+			#box1:hover{
+				transition: 0.2s;
+				/*x y*/
+				/*transform: translate(50px,0);*/
+				/*transform: translate(0px,300px);*/
+				transform: translate(500px,300px);
+			}
+			#box2:hover{
+				/*transform: scale(1.5);*/
+				transform: scaleX(0.5) scaleY(1.5) translateY(100px);
+				transition: 0.2s;
+			}
+			#box3:hover{
+				transform: rotate(720deg) scale(0.5);
+				transition: 0.5s;
+			}
+			#box4:hover{
+				transform: skew(30deg,40deg);
+				transition: 0.5s;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="box1" class="box" style="background-color: pink;">位移动画</div>
+		<div id="box2" class="box" style="background-color: deeppink;">2</div>
+		<div id="box3" class="box" style="background-color: lightpink;">3</div>
+		<div id="box4" class="box" style="background-color: hotpink;">4</div>
+	</body>
+</html>

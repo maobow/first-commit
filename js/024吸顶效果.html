@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body,ul,li{
+				margin: 0;
+				padding: 0;
+			}
+			header{
+				width: 100%;
+				height: 50px;
+				background: aqua;
+				top: 0;
+				left: 0;
+			}
+			.box{
+				width: 500px;
+				height: 600px;
+				margin: 0 auto;
+				color: white;
+				font-size: 22px;
+				text-align: center;
+			}
+			#sidebar{
+				position: fixed;
+				right: 0;
+				top: 20%;
+				list-style: none;
+			}
+			.btn{
+				width: 80px;
+				height: 40px;
+				border: 1px solid palevioletred;
+				font-size: 20px;
+				text-align: center;
+				color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<header></header>
+		<div id="box01" class="box" style="background: red;">1</div>
+		<div id="box02" class="box" style="background: orange;">2</div>
+		<div id="box03" class="box" style="background: yellow;">3</div>
+		<div id="box04" class="box" style="background: green">4</div>
+		<div id="box05" class="box" style="background: deepskyblue;">5</div>
+		
+		<ul id="sidebar">
+			<li class="btn">
+				<a href="#box01">1</a>
+			</li>
+			<li class="btn">
+				<a href="#box02">2</a>
+			</li>
+			<li class="btn">
+				<a href="#box03">3</a>
+			</li>
+			<li class="btn">
+				<a href="#box04">4</a>
+			</li>
+			<li class="btn">
+				<a href="#box05">5</a>
+			</li>
+			<li class="btn">
+				<a href="">回到顶部</a>
+			</li>
+		</ul>
+		
+		<script>
+			var oHeader = document.getElementsByTagName('header')[0];
+			document.onscroll = function(){
+				var top  = document.documentElement.scrollTop;
+				console.log(top)
+				if(top>50){
+					oHeader.style.position = 'fixed';
+//					document.getElementsByClassName('box')[0].style.marginTop = '50px';
+				}else{
+					oHeader.style.position = 'static';
+				}
+			}
+			oTop.onclick = function(){
+				document.documentElement.scrollTop = 0;
+			}
+		</script>
+		
+		
+		
+		
+	</body>
+</html>

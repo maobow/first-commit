@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>我是唯一的H1标签</h1>
+		<button class="btn">按钮1</button>
+		<button class="btn">按钮2</button>
+		<button class="btn">按钮3</button>
+		<p id="say" name='ok'>id是1234</p>
+		
+		
+		<script>
+			console.log(document.getElementById('say'));
+			//class 取到的是数组（标签的集合）
+			console.log(document.getElementsByClassName('btn'));
+			//tagname
+			console.log(document.getElementsByTagName('h1'));
+			//name 不常用 数组
+			console.log(document.getElementsByName('ok'));
+		</script>
+		
+	</body>
+</html>

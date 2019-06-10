@@ -1,0 +1,12 @@
+
+img{
+	width: 100px;
+	height: 100px;
+	float: left;
+}
+p{
+	color: green;
+	font-size: 40px;
+	line-height: 20px;
+	float: left;
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body,
+			ul,
+			li {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}			
+			#box {
+				width: 1150px;
+				height: 510px;
+				/*background: orange;*/
+				margin: 0 auto;
+				border: 1px solid green;
+				position: relative;
+			}			
+			#picbox {
+				width: 1150px;
+				height: 450px;
+				background: palegreen;
+				position: relative;
+				overflow: hidden;
+			}			
+			.bigPic {
+				width: 1150px;
+				height: 450px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				transition: 0.5s;
+			}			
+			#btnBox {
+				width: 1150px;
+				height: 54px;
+				/*background: pink;*/
+				margin-top: 6px;
+				display: flex;
+				display: -webkit-flex;
+				justify-content: space-between;
+			}			
+			.picBtn {
+				width: 138px;
+				height: 54px;
+				/*float: left;*/
+				background: black;
+			}			
+			#before,
+			#next {
+				width: 60px;
+				height: 60px;
+				background: yellow;
+				position: absolute;
+				z-index: 9;
+			}			
+			#before {
+				top: 50%;
+				left: 0;
+			}			
+			#next {
+				top: 50%;
+				right: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="before">前</div>
+			<div id="next">后</div>
+			<ul id="picbox">
+				<li class="bigPic"><img src="img/youhuo/1.jpg" alt="" /></li>
+				<li class="bigPic"><img src="img/youhuo/2.jpg" alt="" /></li>
+				<li class="bigPic"><img src="img/youhuo/3.jpg" alt="" /></li>
+				<li class="bigPic"><img src="img/youhuo/4.jpg" alt="" /></li>
+				<li class="bigPic"><img src="img/youhuo/5.jpg" alt="" /></li>
+				<li class="bigPic"><img src="img/youhuo/6.jpg" alt="" /></li>
+				<li class="bigPic"><img src="img/youhuo/7.jpg" alt="" /></li>
+				<li class="bigPic"><img src="img/youhuo/8.jpg" alt="" /></li>
+
+
+			</ul>
+			<ul id="btnBox">
+				<li class="picBtn"><img src="img/youhuo/btn1.jpg" alt="" /></li>
+				<li class="picBtn"><img src="img/youhuo/btn2.jpg" alt="" /></li>
+				<li class="picBtn"><img src="img/youhuo/btn3.jpg" alt="" /></li>
+				<li class="picBtn"><img src="img/youhuo/btn4.jpg" alt="" /></li>
+				<li class="picBtn"><img src="img/youhuo/btn5.jpg" alt="" /></li>
+				<li class="picBtn"><img src="img/youhuo/btn6.jpg" alt="" /></li>
+				<li class="picBtn"><img src="img/youhuo/btn7.jpg" alt="" /></li>
+				<li class="picBtn"><img src="img/youhuo/btn8.jpg" alt="" /></li>
+			</ul>
+		</div>
+		<script>
+			//01.布局
+			//02.点击按钮切换图片
+			//   picBTN绑定点击事件 遍历数组 for
+			//   封装函数bind函数绑定事件
+			//   得到按钮的索引值
+			//   封装了changePic函数根据索引值改变图片的透明度
+			//03.自动轮播，间隔2s换一张图
+			//   setInterval 设置一个全局iNow 控制显示图片的索引
+			//   为确保点击事件和自动轮播的图片能契合 点击时index赋值给iNow
+			//04.向前跳转&向后
+			//   oBefore click iNow--
+			
+			
+			
+			var oPicBtn=document.getElementsByClassName('picBtn');
+			var oBigPic=document.getElementsByClassName('bigPic');
+			var oBefore=document.getElementById('before');
+			var oNext=document.getElementById('next');
+			console.log(oPicBtn);
+			silder()
+			function silder(){
+				inter();
+				
+				var iNow = 0;
+				var timer;
+				
+				for(var i=0;i<oPicBtn.length;i++){
+					console.log(i)
+					bind(i)
+				}
+				
+				function bind(index){
+					oPicBtn[index].onclick=function(){
+						clearInterval(timer);
+						iNow = index;
+						console.log('dianji'+index)
+						changePic(index)
+						inter()
+					}
+				}
+				function changePic(index){
+					for(var j=0;j<oBigPic.length;j++){
+						oBigPic[j].style.opacity=0;
+						if(j==iNow){
+							oBigPic[iNow].style.opacity=1;
+						}
+					}
+				}
+				function inter(){
+				 	timer = setInterval(function(){
+						iNow++;
+						console.log('zidong'+iNow)
+						if(iNow>7){
+							iNow=0;
+						}
+						
+						changePic(iNow)
+					},2000)
+				}
+				//向前
+				oBefore.onclick = function(){
+					clearInterval(timer);
+					iNow --;
+					if(iNow<0){
+						iNow = oBigPic.length-1;
+					}
+					console.log('前'+iNow)
+					changePic()
+				}
+				
+				
+				
+				//向后
+				oBefore.onclick = function(){
+					clearInterval(timer);S
+					iNow --;
+					if(iNow>oBigPic.length-1){
+						iNow = 0;
+					}
+					console.log('后'+iNow)
+					changePic()
+				}
+				
+			}
+		</script>
+	</body>
+</html>

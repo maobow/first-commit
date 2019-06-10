@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+        		padding:0;
+        		margin:0;
+    			}
+    		#nav {
+        		width:100%;
+        		height:60px;
+        		background:pink;
+        		color:#fff;
+        		line-height:60px;
+        		text-align:center;
+        		padding:0;
+        		margin:0;
+        		list-style:none;
+    			}
+    		#nav li {
+        			float:left;
+        			width:20%;
+        			height:60px;
+    				}
+    		.fix {
+    			position:fixed;
+        		top:0;
+        		left:0;
+        		}
+		</style>
+	</head>
+
+	<div class="wrap">
+    	<h1>111111111</h1>
+    	<p>11111111111111111111111</p>
+    	<ul id="nav">
+        	<li>111111111111</li>
+        	<li>222222222222</li>
+        	<li>333333333333</li>
+    	</ul>
+    	<div class="con">
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+        	<p>4444444444444</p>
+    	</div>
+	</div>
+	<script type="text/javascript">
+		var tit = document.getElementById("nav");
+		//alert(tit);
+		//占位符的位置
+		//获得页面中导航条相对于浏览器视窗的位置
+		//获取距离页面顶端的距离
+		var rect = tit.getBoundingClientRect();
+		var inser = document.createElement("div");
+		tit.parentNode.replaceChild(inser,tit);
+		inser.appendChild(tit);
+		inser.style.height = rect.height + "px";
+		
+		var titleTop = tit.offsetTop;
+		//滚动事件
+		document.onscroll = function(){
+    	//获取当前滚动距离
+    	var btop = document.body.scrollTop||document.documentElement.scrollTop;
+    	//如果滚动距离大于导航条据顶部的距离
+    	if(btop>titleTop){
+        //为导航条设置fix
+        	tit.className = "clearfix fix";
+    	}else{
+        //移除fixed
+        	tit.className = "clearfix";
+    		}
+    	}
+	</script>
+	
+	
+	<button id="top" style="position: fixed;right: 0;top: 30%;">回到顶部</button>
+	
+		<script>
+			//top 点击 scroll = 0
+			var oTop = document.getElementById('top');
+			oTop.onclick = function(){
+				document.documentElement.scrollTop = 0;
+			}
+		</script>
+	
+	<div class="container">
+    <div class="header" style="position:fixed;right:0;top:40%;>
+        <ul>
+            <li class="btn" data-to="d1"><a href="javascript:void(0)">第一个div</a></li>
+            <li class="btn" data-to="d2"><a href="javascript:void(0)">第二个div</a></li>
+            <li class="btn" data-to="d3"><a href="javascript:void(0)">第三个div</a></li>
+            <li class="btn" data-to="d4"><a href="javascript:void(0)">第四个div</a></li>
+        </ul>
+    </div>
+    <div class="main" style="margin-top: 200px;">
+        <div id="d1" style="width: 100%;height: 500px;border: 1px solid #000;">
+            	我是第一个div
+        </div>
+        <div id="d2" style="width: 100%;height: 500px;border: 1px solid #000;">
+            	我是第二个div
+        </div>
+        <div id="d3" style="width: 100%;height: 500px;border: 1px solid #000;">
+            	我是第三个div
+        </div>
+        <div id="d4" style="width: 100%;height: 500px;border: 1px solid #000;">
+            	我是第四个div
+        </div>
+    </div>
+    <div class="footer" style="width: 100%;height: 500px;">
+        		这是页脚
+    </div>
+</div>
+
+	<script>
+	//获取当前li的data-to属性值，用来匹配目标div
+    //获取与当前li想匹配的div距离页面顶端的距离
+    	var lis = document.getElementsByClassName("btn");
+    	for(var i = 0; i < lis.length; i++) {
+        	lis[i].onclick = function() {
+            	var attr = this.getAttribute("data-to");
+            	var div_top = document.getElementById(attr).offsetTop;
+            	window.scrollTo(0, div_top - 200);
+        	}
+    	}
+	</script>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--行间绑定事件-->
+		<div onclick="alert('hello world');">1234456</div>
+		<button id="ok">按钮</button>
+		<br />
+		<input type="text" placeholder="请说我是美少女" id="say"/>
+		<p id="p" style="color: red;display: none;">你咋不说呢</p>
+		<script>
+			var ok = document.getElementById('ok');
+//			ok.addEventListener('click',function(){
+//				alert(1)
+//			})
+//			ok.addEventListener('click',function(){
+//				alert(2)
+//			})
+				
+			ok.onmouseover = function(){
+				alert('666666')
+			}
+			var oS=document.getElementById('say');
+			var oP=document.getElementById('p');
+			oS.onblur=function(){
+				alert(1)
+				if(oS.value==''){
+					oP.style.display='block';
+				}
+			}
+
+		</script>
+	</body>
+</html>

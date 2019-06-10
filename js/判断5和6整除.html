@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="a" placeholder="输入数字"/>
+		<b style="color: deepskyblue;" id="result"></b>
+		<button id="ok">判断</button>
+		
+		<script>
+			var oBtn = document.getElementById('ok');
+			var oB = document.getElementById('result');
+			console.log(oB)
+			oBtn.onclick = function(){
+				//input取到的value是字符串
+				var oInput = document.getElementById('a').value;
+				console.log(oInput,1);
+				var result = Number(oInput);
+				
+				if(result%5==0&&result%6==0){
+					document.write(oInput+'能被5和6整除')
+				}else if(result%5==0){
+					document.write(oInput+'能被5整除')
+				}else if(result%6==0){
+					document.write(oInput+'能被6整除')
+				}else{
+					document.write(oInput+'不能被5或6整除')
+				}
+				
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>百叶窗</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<style type="text/css">
+			#box{
+				width: 750px;
+				height: 400px;
+				margin: 100px auto;
+				border: solid 1px black;
+				animation: rr 2s infinite linear;
+			}
+			.spic{
+				width: 150px;
+				height: 400px;
+				float: left;
+				background-size: auto 100%;
+				transition: width 0.2s linear 0s;  
+			}
+			.spic:nth-child(1){
+				background-image: url(img/wangzhe/timg.jpg);
+			}
+			.spic:nth-child(2){
+				background-image: url(img/wangzhe/timg2.jpg);
+			}
+			.spic:nth-child(3){
+				background-image: url(img/wangzhe/timg3.jpg);
+			}
+			.spic:nth-child(4){
+				background-image: url(img/wangzhe/timg4.jpg);
+			}
+			.spic:nth-child(5){
+				background-image: url(img/wangzhe/timg5.jpg);
+			}
+			#box:hover .spic{
+				width: 50px;
+			}
+			
+			#box:hover .spic:hover{
+				width: 550px;
+			}
+			#box:hover #last{
+				width: 550px;
+			}
+			@keyframes rr{
+				from{transform: rotate(0deg);}
+				to{transform: rotate(720deg);}
+			}
+		</style>
+	</head>
+	<body>
+		
+			<ul id="box">
+				<li class="spic"></li>
+				<li class="spic"></li>
+				<li class="spic"></li>
+				<li class="spic"></li>
+				<li class="spic" id="last"></li>
+			</ul>
+		
+	</body>
+</html>

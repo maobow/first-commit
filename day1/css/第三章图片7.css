@@ -1,0 +1,23 @@
+#box{
+	background: black;
+	height: 200;
+	width: 200px;
+}
+ol,ul,li{
+	padding:0;
+	margin:0;
+}
+ol li{
+	margin-left: 20px;
+}
+li{
+	line-height: 35px;
+	color: white;
+}
+ul li{
+	list-style: none;
+	
+}
+hr{
+	color: white;
+}

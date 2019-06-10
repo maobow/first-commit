@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p>
+			<span id="time">5</span>秒
+		</p>
+		<script>
+			//间隔定时器
+			var t = Number (document.getElementById('time').innerHTML);
+			console.log(typeof(t))
+			//定时器以毫秒为单位1s = 1000ms
+			var timer = setInterval(function(){
+				t--;
+				console.log(t);
+				
+				if(t<=0){
+					//停止定时器
+					clearInterval(timer)
+				}
+				document.getElementById('time').innerHTML = t;
+			},1000)
+		</script>
+	</body>
+</html>

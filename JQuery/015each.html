@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+	</head>
+	<body>
+		<script>
+			var inf = [
+		     { name:"赵四儿",
+		       age:48,
+		       sex:'男'
+		      },
+		     { name:"老白",
+		       age:26,
+		       sex:'男'
+		      },
+		     { name:"佟湘玉",
+		       age:28,
+		       sex:'女'
+		     } 		
+			]
+			//each遍历数组 $.each('遍历的数组名',function(索引值，当前遍历到的这个){})
+			$.each(inf,function(index,data){
+				console.log(data)
+				var str = `${data.name}是个${data.sex}的今年${data.age}岁`
+				var h = $('<h1>'+str+'</h1>')
+				$(document.body).append(h)
+			})
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

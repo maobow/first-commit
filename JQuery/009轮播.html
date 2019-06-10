@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/base.css" />
+		<style>
+			#father{
+				width: 500px;
+				height: 400px;
+				margin: 0 auto;		
+				position: relative;		
+				overflow:hidden ;
+			}
+			#box{
+				width: 3000px;
+				height: 400px;
+				text-align: center;
+				line-height: 400px;
+				font-size:40px ;
+				color: white;
+		        /*transition: left 0.5s;*/ 
+			}
+			.pic{
+				width: 500px;
+				height: 400px;
+				position: absolute;		
+				transition: left 0.5s;		
+			}
+			.hide{						        
+		        left: 500px;
+		        top: 0;
+		        z-index: 1;
+			}
+			.show{						        
+		        left: 0;
+		        top: 0;
+		        z-index: 9;
+			}			
+		</style>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+	</head>
+	<body>
+		<div id="father">
+			<ul id="box">
+				<li class="pic l show" style="background-color: red;">1</li>
+				<li class="pic l hide" style="background-color: aqua;">2</li>
+				<li class="pic l hide" style="background-color: yellow;">3</li>
+				<li class="pic l hide" style="background-color: hotpink;">4</li>
+				<li class="pic l hide" style="background-color: deepskyblue;">5</li>
+				<li class="pic l hide" style="background-color: red;">1</li>
+			</ul>			
+		</div>
+		<script>
+			var iNow = 0;
+			setInterval(function(){
+				iNow++;
+				if(iNow>$('.pic').length-1){
+					iNow = 0;
+				}
+				$('.pic').eq(iNow).removeClass('hide').addClass('show')
+				$('.pic:not(.show)').removeClass('show').addClass('hide')
+				console.log( iNow )
+			},1000)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<style>
+			#box{
+				width: 100px;
+				height: 100px;
+				background-image: url(img/heart.jpg);
+				/*横向100%纵向100%适应*/
+				background-size: 100% 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script>
+			//01.监听鼠标移动事件
+			//02.获取到鼠标位置
+			//03.根据坐标改变心形定位
+			$(document).mousemove(function(ev){
+				var left = ev.clientX-50;
+				var top = ev.clientY-50;
+				$('#box').css({'left':left,'top':top})
+			})
+		</script>
+	</body>
+</html>

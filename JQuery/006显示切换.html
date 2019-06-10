@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/base.css" />
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<style>
+			.box{
+				background: orange;
+			}
+			.hang{
+				width: 80%;
+				height:100px;
+				margin: 10px auto;
+			}
+			.lie{
+				width: 40%;
+				height: 200px;
+				margin: 10px 5%;	
+				float: left;			
+			}
+			#ok{
+				position: fixed;
+			
+			}
+		</style>
+	</head>
+	<body>
+		<button id="ok">列表排布</button>
+		<ul>
+           <li class="box hang" oc="0"></li>
+		   <li class="box hang" oc="0"></li>   
+           <li class="box hang" oc="0"></li>
+		   <li class="box hang" oc="0"></li> 	
+           <li class="box hang" oc="0"></li>
+		   <li class="box hang" oc="0"></li>   
+           <li class="box hang" oc="0"></li>
+		   <li class="box hang" oc="0"></li> 		   
+		</ul>
+		<script>
+			//01.布局 提前设置好两个class
+			//02. ok click
+			//    box class名切换
+//			$('#ok').click(function(){				
+//				var oc = $('.box').attr('oc');			
+//				if(oc==0){
+//					$('.box').attr('oc','1');
+//					$('.box').removeClass('hang').addClass('lie')
+//				}
+//				if(oc==1){
+//					$('.box').attr('oc','');
+//					$('.box').removeClass('lie').addClass('hang')
+//				}
+//			})
+			$('#ok').click(function(){
+				$('.box').toggleClass('hang lie')
+			})		
+		</script>
+	</body>
+</html>

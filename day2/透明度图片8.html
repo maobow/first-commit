@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.bigbox img{
+				width: 700px;
+				height: 400px;
+				z-index: 1;
+				position: relative;
+			}
+			.box{
+				width: 400px;
+				height: 200px;
+				background-color: white;
+				opacity: 0.6;
+				z-index: 2;
+				position: absolute;
+				top: 100px;
+				left: 40px;
+			}
+			.formbox{
+				width: 220px;
+				height: 120px;
+				background-color: white;
+				top: 140px;
+				left: 140px;
+				position: absolute;
+				z-index: 3;
+			}
+			p{
+				margin: 15px;
+				margin-left: 25px;
+				font-size: 14px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="bigbox">
+			<img src="img/02.jpg"/>
+			<div class="box"></div>
+			
+			<div class="formbox">
+				<p>
+					账号<input type="text"/>
+				</p>
+				<p>
+					密码<input type="password"/>
+				</p>
+				<p>
+					<input type="button" value="OK"/>
+				</p>
+			</div>
+		</div>
+	</body>
+</html>

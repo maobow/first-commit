@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			table{
+				border: 1px solid grey;
+				/*background: grey;
+				color: white;
+				font-weight:bolder ;*/
+			}
+			tr:nth-child(1){
+				background: grey;
+				color: white;
+				font-weight:bolder ;
+			}
+			tr,td{
+				padding: 10px 30px;
+				border: 1px solid grey;
+				text-align: center;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+	</head>
+	<body>
+		请输入学号: <input type="text" id="num"/>
+		请输入姓名：<input type="text" id="name"/>
+		请输入性别：<input type="text" id="sex"/>
+		<button id="add">添加</button>
+		<br />
+		<br />
+		
+		<table cellspacing="0">
+            <tr>
+            	<td>学号</td>
+            	<td>姓名</td>
+            	<td>性别</td>
+            	<td>删除</td>
+            </tr>
+          
+		</table>
+		
+		<script>
+			//01.布局
+			//02.add.click
+			//   获取input .val()
+			$('#add').click(function(){
+				var num = $('#num').val();
+				var name = $('#name').val();
+				var sex = $('#sex').val();
+				console.log(num,name,sex)
+				var str = `<tr>
+				               <td>${num}</td>
+				               <td>${name}</td>
+				               <td>${sex}</td>
+				               <td><button class='del'>DEL</button></td>
+				          </tr>`;
+				console.log(str)               
+				$('table').eq(0).append(str)
+				               
+			})
+			
+			$('table').on('click','.del',function(){
+//				alert(1)
+				var index = $('.del').index(this)+1;
+				console.log(index);
+				$('tr').eq(index).remove()
+			})
+			
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="ok">点名</button>
+		<span id="name">000</span>
+		<script>
+			//01·布局
+			//02·ok .onclick
+			//03·按钮点击之后，生成随机数
+			//04·根据随机数访问数组
+			//05·拿到人名 替换#name innerHTML
+			var ok = document.getElementById('ok');
+			var names = ['小红','小白','小花','周杰伦','林俊杰','蔡依林'];
+			var oName = document.getElementById('name');
+			ok.onclick = function(){
+				
+				var num = Math.floor(Math.random()*6);
+				console.log(names[num]);
+				oName.innerHTML = names[num];
+			}
+			
+		</script>
+	</body>
+</html>

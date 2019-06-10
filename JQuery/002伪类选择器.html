@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+	</head>
+	<body>
+		<p class="op">0000</p>
+		<p class="op">111111</p>
+		<p class="op">2222</p>
+		<p class="op">33344</p>
+		<p class="op">444444</p>
+		<p class="op1">555555</p>
+		<p class="op1" id="box">66666</p>
+		<p class="op1">7777</p>
+		<p class="op1">888888</p>
+		
+		<script>
+			$('p:first').css('color','pink');
+			$('op1:first').css('color','deeppink');
+			$('.op:last').css('color','green');
+//			$('p:eq(6)').css('color','orange').css('fontWeight','900');
+			//改变多个css
+			$('p:eq(6)').css({'color':'orange','fontWeight':'900'});
+			//even过滤所有的偶数个
+			$('p:even').css('border','1px solid red');
+			//奇数
+			$('p:odd').css('backgroundColor','yellow');
+			//大于索引值
+			$('p:gt(5)').css('width','500px');
+			//小于索引值
+			$('p:lt(5)').css('width','500px');
+			//除去
+			$('p:not(#box)').css('border','1px dashed green');
+		</script>
+	</body>
+</html>

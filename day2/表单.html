@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function upload(){
+				alert("！！")
+			}		
+		</script>
+	</head>
+	<body>
+		<h4>表单</h4>
+		<form action="#" method="get">
+			<p>性别：<input type="radio" name="sex" value="男" />男
+					<input type="radio" name="sex" value="女" checked="checked"/>女
+					<input type="radio" name="sex" value="未知"/>未知
+			</p>
+			<p>	爱好：
+				<input type="checkbox" name="hobby" value="pic"/>画画
+				<input type="checkbox" name="hobby" value="bus" />篮球	
+				<input type="checkbox" name="hobby" value="eat" />美食
+				<input type="checkbox" name="hobby" value="dream" checked="checked"/>睡觉
+				<input type="checkbox" name="hobby" value="study" checked="checked"/>学习
+			</p>
+			<p>家乡：
+				<select name="home" size="0">
+					<option value="">--请选择--</option>
+					<option value="2">茂名</option>
+					<option value="3">阳江</option>
+					<option value="4">揭阳</option>
+					<option value="5">清远</option>
+					<option value="1" selected="selected">湛江</option>
+				</select>
+			</p>
+			
+			<p>
+				姓名：<input type="text" name="username" value="aaa" readonly="readonly"/>
+			</p>
+			<p>
+				电话：<input type="text" name="num" maxlength="11" disabled="disabled"/>
+			</p>
+			
+			
+			<p>
+				密码：<input type="password" name="pass" value=""/>
+			</p>
+			<p>
+				建议和要求：
+				<textarea cols="30" rows="5" style="resize: none;">东风吹，战鼓擂，弄急眼了谁怕谁</textarea>
+			</p>
+			<p>
+				文件上传：<input type="file" onclick="upload();"/>
+			</p>
+			<p>
+				邮件：<input type="email" name="email"/>
+			</p>
+			
+			<p>
+				<input type="hidden" name="recordId" value="123456" />
+				
+			</p>
+			
+			
+		<p>
+			<input type="submit" value="提交"/>
+			<input type="button" name="btn" value="提交" onclick="alert('我来啦！')"/>
+			<input type="reset" value="重置" />
+		</p>
+		</form>
+	</body>
+</html>

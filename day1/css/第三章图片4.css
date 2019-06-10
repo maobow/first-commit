@@ -1,0 +1,36 @@
+
+#top{
+	background: #666666;
+	width: 250px;
+	height: 240px;
+}
+#bottom{
+	background: #dcdcdc;
+	width: 250px;
+	height: 115px;
+	
+}
+p{
+	color: white;
+}
+.topfont{
+	text-align: center;
+}
+#p1{
+	font-size: 14px;
+	padding-top: 20px;
+}
+#p2{
+	font-size: 24px;
+	
+	padding-top: 20px;
+}
+#p3{
+	padding-left: 120px;
+}
+span{
+	display: block;
+	font-size: 14px;
+	padding-top: 30px;
+	padding-left: 70px;
+}

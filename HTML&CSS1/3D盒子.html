@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>3D</title>
+		<style type="text/css">
+			
+			.box{
+				width: 200px;
+				height: 200px;
+				border: pink 1px solid;
+				float: left;
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0.5;
+			}
+			
+			#stage{
+				width: 600px;
+				height: 500px;
+				border: black 1px solid;
+				margin: 0px auto;
+				/*景深1200px*/
+				perspective: 1200px;
+				/*设置变形的类型*/
+				
+				/*overflow: hidden;*/
+			}
+			#father{
+				margin: 100px auto;
+				width: 200px;
+				height: 200px;
+				/*border: deeppink 2px solid;*/
+				position: relative;
+				transition: all 5s;
+				transform-style: preserve-3d;
+				animation: moves 5s infinite linear;
+			}
+			#top{
+				transform: translateY(-100px) rotateX(90deg);
+			}
+			#bot{
+				transform: translateY(100px) rotateX(90deg);
+			}
+			#left{
+				transform: translateX(-100px) rotateY(90deg);
+			}
+			#right{
+				transform: translateX(100px) rotateY(90deg);
+			}
+			#before{
+				transform: translateZ(100px);
+			}
+			#after{
+				transform: translateZ(-100px);
+			}
+			#father:hover{
+				transform: rotateY(720deg) rotateZ(720deg) ;
+			}
+			@keyframes moves{
+				from{transform: rotateY(0deg) rotateZ(0deg);}
+				to{transform: rotateY(720deg) rotateZ(720deg);}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="stage">
+			<div id="father">
+				<section id="top" class="box" style="background: red;">上</section>
+				<section id="bot" class="box" style="background: orange;">下</section>
+				<section id="left" class="box" style="background: yellow;">左</section>
+				<section id="right" class="box" style="background: green;">右</section>
+				<section id="before" class="box" style="background: greenyellow;">前</section>
+				<section id="after" class="box" style="background: cornflowerblue;">后</section>
+			</div>
+		</div>
+	</body>
+</html>

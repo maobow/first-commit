@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			table,td{
+				border: 1px solid pink;
+			}
+			td{
+				padding: 5px 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<p>输入行数:<input type="text" id="h" /></p>
+		<p>输入列数:<input type="text" id="l" /></p>
+		<button id="ok">生成表格</button>
+		<button id="del">删除表格</button>
+		<div id="box"></div>
+		<script>
+			//01.布局
+			//02.ok绑定点击事件
+			//   h value l value
+			//   for 创建td
+			//   for 创建tr
+			//   创建table 上树
+			var ok = document.getElementById('ok');
+			var oBox = document.getElementById('box');
+			var del = document.getElementById('del');
+			ok.onclick = function(){
+				var hNum = document.getElementById('h').value;
+				var lNum = document.getElementById('l').value;
+				
+				var oTable = document.createElement('table');
+				
+				console.log(hNum,lNum);
+				for(var i=0;i<hNum;i++){
+					var oTr = document.createElement('tr');
+					
+					for(var j=0;j<lNum;j++){
+						var oTd = document.createElement('td');
+						var str = '第'+i+'行第'+j+'列';
+						oTd.innerHTML = str;
+						oTr.appendChild(oTd);
+					}
+					
+					oTable.appendChild(oTr)
+					
+				}
+				console.log(oTable)
+				oBox.appendChild(oTable)
+			
+			}
+			//清空表格
+			del.onclick = function(){
+				oBox.innerHTML = '';
+			}
+			
+			
+			
+		</script>
+		
+		
+	</body>
+<html>

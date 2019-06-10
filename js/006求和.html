@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="a" placeholder="输入数字a"/>
+		<span style="color: red;">+</span>
+		<input type="text" id="b" placeholder="输入数字b"/>
+		<span style="color: red;">=</span>
+		<b style="color: deepskyblue;" id="result">0</b>
+		<button id="ok">求和</button>
+		
+		<script>
+			
+			var oBtn = document.getElementById('ok');
+			var oB = document.getElementsByTagName('b')[0];
+			console.log(oB)
+			oBtn.onclick = function(){
+				//input取到的value是字符串
+				var oInput1 = document.getElementById('a').value;
+				var oInput2 = document.getElementById('b').value;
+				add(oInput1,oInput2,1);
+			}
+			function add(oInput1,oInput2){
+				var result = Number(oInput1)+Number(oInput2);
+				console.log(result);
+				oB.innerHTML = result;
+			}
+		</script>
+	</body>
+</html>

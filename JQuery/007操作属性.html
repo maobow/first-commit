@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<style>
+			#box{
+				width: 200px;
+				height: 400px;
+				background-color: orange;
+				transition: 1s;
+				margin: 100px auto;
+				position: relative;
+			}
+			#son{
+				width: 20px;
+				height: 20px;
+				background-color: red;
+				top: 120px;
+				left: 50px;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="son"></div>
+		</div>
+		<script>
+			//取得节点 的宽度高度
+			console.log($('#box').width(),$('#box').height())
+			$('#box').click(function(){
+				$('#box').height(100);
+			})
+			
+			//取得节点相对于文档的偏移,margin
+			console.log($('#box').offset().left);
+			
+			
+			$(document).scroll(function(){
+				var top = $(document).scrollTop();
+				console.log(top)
+			})
+			
+			//position的定位 可读
+			console.log($('#son').position());
+//			$('#son').position().left = '300px';
+		</script>
+	</body>
+</html>

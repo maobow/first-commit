@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+	</head>
+	<body>
+		<ul>
+			<li class="btn">0</li>
+			<li class="btn">1</li>
+			<li class="btn">2</li>
+			<li class="btn">3</li>
+			<li class="btn">4</li>
+			<li class="btn">5</li>
+		</ul>
+		<button id="even">偶数</button>
+		<button id="odd">奇数</button>
+		
+		<script>
+			
+			$('#even').click(function(){
+				$('.btn:odd').css('backgroundColor','white');
+				$('.btn:even').css('backgroundColor','yellow');
+			})
+			$('#odd').click(function(){
+				$('.btn:even').css('backgroundColor','white');
+				$('.btn:odd').css('backgroundColor','pink');
+			})
+			
+			
+			//弹出索引值
+			$('.btn').click(function(){
+				alert($('.btn').index(this))
+			})
+			
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

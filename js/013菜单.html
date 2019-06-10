@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.btns{
+				width: 100%;
+				border: solid 1px green;
+			}
+			.info{
+				width: 100%;
+				height: 60px;
+				background-color: yellowgreen;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div class="btns">1</div>
+			<div class="info">11111</div>
+			<div class="btns">2</div>
+			<div class="info">22222</div>
+			<div class="btns">3</div>
+			<div class="info">33333</div>
+		</div>	
+			
+			<script>
+			//01.布局
+			//02.btn绑定点击事件 .onclick
+			//   遍历btns数组，绑定事件
+			//   点击获取按钮的索引值index
+			//03.info的显示或隐藏 .style.display
+			//04.
+			var oBtns = document.getElementsByClassName('btns');
+			var oInfo = document.getElementsByClassName('info');
+			
+			for(var i=0;i<oBtns.length;i++){
+				bind(i)
+			}
+			console.log(i)
+			function bind(index){
+				oBtns[index].onclick = function(){
+//					alert(index);
+					if(oInfo[index].style.display=='block'){
+						oInfo[index].style.display='none';
+					}else{
+						oInfo[index].style.display='block';
+					}
+				}
+			}
+		</script>
+			
+		
+	</body>
+</html>

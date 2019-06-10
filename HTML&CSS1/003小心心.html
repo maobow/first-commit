@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>小心心</title>
+		<style>
+			#father{
+			  width: 200px;
+			  height: 200px;
+			  /*background-color: orange;*/
+			  /*让盒子居中*/
+			  margin: 0 auto;
+			  transition: 1s;
+			  animation: big 1s infinite;
+			}
+			
+			/*:hover表示鼠标移上*/
+			#father:hover{
+				/*放大1.5倍*/
+				transform: scale(1.5);
+				transition: 1s;
+			}
+			#box1,#box2{
+				width: 100px;
+				height: 150px;
+				background-color: red;
+				border-radius: 50px 50px 0px 0px;
+				float: left;
+			}
+			#box1{
+				transform: rotate(-45deg);
+				transform-origin: 100px 50px;
+			}
+			#box2{
+				transform: rotate(45deg);
+				transform-origin: 0px 50px;
+			}
+			@keyframes big{
+				from{transform: scale(1);}
+				to{transform: scale(1.5);}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="father">
+		<div id="box1"></div>
+		<div id="box2"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 200px;
+				height: 200px;
+			}
+			#box1{
+				background-color: aquamarine;
+				transition: width 0.5s linear 0s;
+			}
+			#box1:hover{
+				width: 100%;
+			}
+			#box2{
+				height: 0px;
+				background-color: yellow;
+				transition: height 0.5s ease-in 0s;
+			}
+			/*+表示相邻的弟弟节点*/
+			#box1:hover+#box2{
+				height: 200px;
+			}
+			#box3{
+				background-color: greenyellow;
+				opacity: 1;
+				transition: opacity 0.5s linear 0.5s; 
+			}
+			#box3:hover{
+				opacity: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1" class="box" "></div>
+		<div id="box2" class="box"></div>
+		<div id="box3" class="box"></div>
+		<div id="box4" class="box"></div>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#stage{
+				width: 600px;
+				height: 500px;
+				border: 2px solid deeppink;
+				margin: 0 auto;
+				perspective: 1200px;
+				transform-style: preserve-3d;
+			}
+			#stage:hover .box{
+				transform: rotateY(720deg);
+			}
+			.box{
+				width: 200px;
+				height: 200px;
+				border-radius: 50%;
+				background-color: orange;
+				transition: 0.5s;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="stage">
+			<section class="box"></section>
+		</div>
+	</body>
+</html>

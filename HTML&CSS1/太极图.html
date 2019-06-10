@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>太极</title>
+		<style type="text/css">
+			#box{
+				width: 300px;
+				height: 300px;
+				border: solid 1px black;
+				margin: 100px auto;
+				border-radius: 50%;
+				animation: rr 2s infinite linear;
+			}
+			.s{
+				width: 150px;
+				height: 300px;
+				float: left;
+			}
+			#left{
+				background-color: white;
+				border-radius: 150px 0 0 150px;
+				position: relative;
+			}
+			#left::before{
+				content: '';
+				float: left;
+				width: 150px;
+				height: 150px;
+				background-color: white;
+				border-radius: 50%;
+				position: absolute;
+				top: 0;
+				left: 75px;
+				z-index: 2;
+			}
+			#left::after{
+				content: '';
+				float: left;
+				width: 75px;
+				height: 75px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				top: 32px;
+				left: 108px;
+				z-index: 3;
+			}
+			#right::before{
+				content: '';
+				float: left;
+				width: 150px;
+				height: 150px;
+				background-color:black;
+				border-radius: 50%;
+				position: absolute;
+				top: 150px;
+				left: -75px;
+				
+			}
+			#right{
+				background-color: black;
+				border-radius: 0 150px 150px 0;
+				position: relative;
+			}
+			#right::after{
+				content: '';
+				float: left;
+				width: 75px;
+				height: 75px;
+				background-color: white;
+				border-radius: 50%;
+				position: absolute;
+				top: 180px;
+				left: -32px;
+				z-index: 3;
+			}
+			@keyframes rr{
+				from{transform: rotate(0deg);}
+				to{transform: rotate(720deg);}
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<section id="left" class="s"></section>
+			<section id="right" class="s"></section>
+			
+
+		</div>
+		
+	</body>
+</html>

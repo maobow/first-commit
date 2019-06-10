@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//形参实参
+//			var a = 5;
+//			var b = 6;
+            //函数用来 接受实际参数的变量名，叫做形参（形式上的参数）
+			function add(a,b){
+//				console.log(a+b);
+				var result = a+b;
+				console.log(a+'+'+b+'='+result);
+			}
+			add()
+			//调用函数传递的参数，是实参
+			add(7,8)
+			add(123,45)
+			
+			
+			function str(a,b){
+				var str01 = a+'和'+b+'是好朋友';
+				var str02 = a+'和'+b+'是好邻居';
+				console.log(str01);
+				return{
+					fri:str01,
+					nei:str02
+				};
+			}
+			var ww = str('赵四儿','刘能')
+			console.log(ww.nei);
+			document.write(ww);
+		</script>
+	</body>
+</html>

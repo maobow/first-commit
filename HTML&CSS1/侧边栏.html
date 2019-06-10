@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>侧边栏</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<style type="text/css">
+			#side{
+				width: 40px;
+    			height: 100%;
+			    background: #444851;
+			    position: fixed;
+			    right: 0;
+			    top: 0;
+			}
+			.sideBtn{
+				width: 40px;
+				padding: 15px 0;
+				color: white;
+				border: 1px solid yellow;
+			}
+			#btnBox{
+				margin-top: 200px;
+				overflow: hidden;
+			}
+			.iconS{
+				width: 17px;
+				height: 19px;
+				display: block;
+				background-color: yellow;
+				margin: 0 auto;
+				background-image: url(img/start/ibar_sprites.png);
+				
+				
+			}
+			.sideBtn:hover{
+				background-color: deeppink;
+			}
+			#user .iconS{
+				background-position: 0 0;
+			}
+			#user:hover .iconS{
+				background-position: -33px 0;
+			}
+			#shopCar .iconS{
+				background-position: 0 -28px;
+				widows: 23px;
+				height: 18px;
+			}
+			#shopCar:hover .iconS{
+				background-position: -33px -28px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			01.画个容器盒子，高度100%固定定位；
+			02.画出按钮盒子 宽度一定，上下内边距
+			03.创建小图标的容器，转成块或者内联块
+			04.调节背景图片坐标
+		-->
+		<div id="side">
+			<ul id="btnBox">
+				<li class="sideBtn">
+					<i class="iconS" id="user"></i>
+				</li>
+				<li class="sideBtn" id="shopCar"></li>
+				<li class="sideBtn" id="money"></li>
+				<li class="sideBtn">4</li>
+			</ul>	
+		</div>
+	</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var a = 99;
+			var b = 1000;
+			if(a>b){
+				console.log(a+'<'+b);
+			}
+			else if(a<b){
+				console.log(a+'<'+b);
+			}
+			else{
+				console.log(a+'='+b);
+			}
+			console.log(a<b);
+			
+			var num = 1;
+			switch(num){
+				case 1:
+				console.log('111111');
+				break;
+				case 2:
+				console.log('222222');
+				break;
+				case 3:
+				console.log('333333');
+				break;
+			}
+			
+			var i = 0;
+//			do{
+//				console.log(i);
+//				i++;
+//			}while (i<5)
+			
+			while (i<5){
+				//es6 let 块级作用域下的变量
+				let a = 'let';
+				console.log(i,a);
+				i++;
+			}
+			console.log('end'+i)
+			console.log(a)
+			
+			
+			
+			var arr = [0111,1111,22112,123234,123];
+			for(var j=0;j<5;j++){
+				console.log(arr[j])
+				document.write('<h1>1111</h1>')
+			}
+			for (n in arr){
+				console.log(n)
+			}
+		</script>
+		
+	</body>
+</html>

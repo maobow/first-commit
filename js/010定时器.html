@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 600px;
+				height: 400px;
+				background-color: pink;
+				margin: 0 auto;
+				transition: all .2s;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script>
+			//延时定时器,时间以毫秒为单位
+			//布局
+			//过了两秒执行代码 box隐藏 display none
+			var oBox = document.getElementById('box');
+			console.log(oBox);
+//			setTimeout(function(){
+//				alert('来了老弟！')
+//				oBox.style.display = 'none';
+//				oBox.innerHTML = '来了老弟！';
+				oBox.style.width = '300px';
+			},1000)
+			
+			
+			//字符串效率低
+			setTimeout('alert("来了老弟！");',2000)
+		</script>
+	</body>
+</html>

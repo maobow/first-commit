@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		#box{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			margin: 0 auto;
+		}
+	</style>
+	<body>
+		<div id="box">
+			
+		</div>
+		<script>
+			var num = 3.1412323;
+			var num02 = 2.5412;
+			//Math.round 将数字进行四舍五入0.5入
+			console.log( Math.round( num ) );
+			//Math.ceil 数字向上取整，往大了取整
+			console.log( Math.ceil( num ) );
+			//数字向下取整，往小了取整
+			console.log(Math.floor(num02));
+			//取最大
+			console.log(Math.max(0,1,2,45,254,34));
+			//取最小
+			console.log(Math.min(0,1,2,45,254,34));
+			
+			
+			var oBox = document.getElementById('box')
+			setInterval(function(){
+				var co = '#'+Math.ceil(Math.random()*1000000);
+				oBox.style.backgroundColor = co;
+				console.log(co)
+			},1000)
+		</script>
+	</body>
+</html>

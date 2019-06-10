@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box { width: 1190px; margin: 0 auto; }
+        	#btn{ 
+        		width: 40px; 
+        		height: 40px; 
+        		background-color: red; 
+        		position: fixed; 
+        		right: 0px; 
+        		bottom: 60px;
+        		background: url(img/youhuo/you.jpg) no-repeat left top; 
+        	 }
+        	#btn:hover{ background: url(img/youhuo/you.jpg) no-repeat left -40px; } 
+		</style>
+	</head>
+	<body>
+		<button id="ok"></button>
+		<script>
+//			var obtn=document.getElementById('ok');
+//			//延时定时器
+//			setTimeout((function){
+//			document.write('过了两秒');	
+//			alert('你好')
+//			},2000)
+//			//警示器框
+//			
+//			obtn.onclick=function(){
+//				alert('按钮');
+//			}
+//			//确认框 返回值true/false
+//			var a=confirm('你确认继续访问吗');
+//			
+//			if(a==true){
+//				document.write('欢迎访问');
+//			}else{
+//				document.write('404');
+//			}
+//			console.log(a)
+//			//文本输入框
+//			var b=prompt('请输入姓名','请输入...');
+
+//
+//          var a=confirm('是否加载?');
+//        
+//          if(a==true){
+//          	var username=prompt('请输入姓名','请输入...');
+//          	document.write(username+'欢迎登录');
+//          }else{
+//          	 alert('你不！');
+//          	 
+//          }
+			
+//			window.location.href = 'http://www.baidu.com';
+			
+			
+//			console.log(window.screen.width);
+//			console.log(window.screen.height);
+
+
+//			document.onscroll = function(){
+//				console.log(document.documentElement.scrollTop)
+//			}
+
+ <div class="box">
+            <img src="1.jpg"/>
+        </div>
+        <a href="javascript:;" id="btn" title="回到顶部"></a>
+
+
+//		document.onscroll = function(){
+//			console.log(document.documentElement.scrollTop)
+//		}
+			window.onload  = function(){
+    		var obtn = document.getElementById('btn');
+   			obtn.onclick = function(){             
+      		var osTop = document.documentElement.scrollTop || document.body.scrollTop;
+        	document.documentElement.scrollTop = document.body.scrollTop = -200;                       
+    };
+}
+		</script>
+	</body>
+</html>

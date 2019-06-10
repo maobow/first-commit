@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<style type="text/css">
+			#box{
+				width: 600px;
+				height: 400px;
+				background-image: url(img/timg.jpg);
+				background-size:100% 100% ;
+				margin: 100px auto;
+				color: white;
+				font-size: 20px;
+			}
+			#close{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div>
+				<span id="time" class="l">倒计时5秒</span>
+				<span id="close" class="r">X关闭</span>
+			</div>
+		</div>
+		<script>
+			//1.布局 
+			//2.倒计时 间隔1s改变秒数
+			//3.时间到0 停止计时器
+			//显示关闭按钮 display block
+			//4.点击关闭按钮
+			var i = 5;
+			var oTime = document.getElementById('time');
+			var oClose = document.getElementById('close');
+			var oBox = document.getElementById('box');
+			var timer = setInterval(function(){
+				i--;
+				var str = '倒计时'+i+'秒';
+				oTime.innerHTML = str;
+				console.log(i)
+				if(i<=0){
+					clearInterval(timer);
+					oClose.style.display = 'block';
+				}
+				
+			},1000)
+			
+			oClose.onclick = function(){
+				alert('？？');
+				oBox.style.display = 'none';
+			}
+			
+		</script>
+	</body>
+</html>

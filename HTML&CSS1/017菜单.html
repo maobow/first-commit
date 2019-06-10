@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>菜单的显示和隐藏</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<style type="text/css">
+			.btn1{
+				width: 100px;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+				position: relative;
+				margin: 0 auto;
+				border: solid 1px black;
+				float: left;
+				/*列表的点去掉*/
+				list-style: none;
+			}
+			
+			.btn1:hover .btn2{
+				display: block;
+			}
+			.btn2{
+				width: 120px;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+				position: relative;
+				margin: 0 auto;
+				border: solid 1px black;
+				background-color: #00BFFF;
+				float: left;
+				/*列表的点去掉*/
+				list-style: none;
+				display: none;
+			}
+			
+			#box2{
+				position: absolute;
+				overflow: hidden;
+			}
+			.btn1:hover .btn2 {
+				display: block;
+			}
+			.btn3{
+				width: 150px;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+				position: relative;
+				margin: 0 auto;
+				border: solid 1px black;
+				background-color: pink;
+				float: left;
+				left: 120px;
+				/*列表的点去掉*/
+				list-style: none;
+				display: none;
+			}
+			.btn2:hover .btn3{
+				display: block;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+			<ul id="box1">
+				<li class="btn1 l">111
+					<ul class="box2">
+						<li class="btn2">222二级
+							<ul class="box3">
+						   		<li class="btn3">3333三级</li>
+								<li class="btn3">3333三级</li>
+								<li class="btn3">3333三级</li>
+							</ul>
+						</li>
+						<li class="btn2">222二级
+							<ul class="box3">
+						   		<li class="btn3">3333三级</li>
+								<li class="btn3">3333三级</li>
+								<li class="btn3">3333三级</li>
+							</ul>
+						</li>
+						<li class="btn2">222二级
+							<ul class="box3">
+						   		<li class="btn3">3333三级</li>
+								<li class="btn3">3333三级</li>
+								<li class="btn3">3333三级</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li class="btn1">111
+					<ul class="box2">
+						<li class="btn2">222二级</li>
+						<li class="btn2">222二级</li>
+						<li class="btn2">222二级</li>
+					</ul>
+				</li>
+				<li class="btn1">111</li>
+			</ul>
+	</body>
+</html>

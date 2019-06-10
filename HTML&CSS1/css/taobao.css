@@ -1,0 +1,59 @@
+body{
+	background-color: #f2f2f2;
+}
+
+#box{
+	width: 1150px;
+	height: 714px;
+	background-color: white;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+#title{
+	width: 1150px;
+	height: 70px;
+	
+}
+#title img{
+	margin: 25px 420px;
+}
+.box2{
+	margin: 12px 12px;
+	height: 200px;
+}
+.box3{
+	margin-top: 10%;
+	height: 200px;
+	margin-left: 10px;
+}
+.shop{
+	width: 220px;
+	height: 300px;
+	background-color: #F2F2F2;
+	float: left;
+	margin-left: 5px;
+}
+.shop:hover{
+	background-color: orangered;
+}
+
+.pic img{
+	width: 100%;
+}
+.info{
+	
+	width: 220px;
+	height: 40px;
+	
+}
+.info p{
+	font-size: 12px;
+	color: #808080;
+	margin: 10px 10px;
+}
+.price p{
+	font-size: 14px;
+	color: orangered;
+	font-weight: bold;
+}
+

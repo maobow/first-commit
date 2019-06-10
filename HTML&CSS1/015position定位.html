@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 200px;
+				height: 200px;
+				margin: 0 auto;
+			}
+			body{
+				height: 3000px;
+			}
+			
+			
+			/*固定定位 如果没有设置坐标，默认以浏览器视口的左上角 0,0 会脱离文档流*/
+			.box:nth-child(1){
+				position: fixed;
+				height: 100px;
+				left: 50px;
+				top: 40px;
+			}	
+				
+				
+			#s02,#s03,#s04{
+				width: 20px;
+				height: 20px;
+				background-color: red;
+			}
+			#s02{
+				position: relative;
+				top: 40px;
+				left: 50px;
+			}
+			#s03{
+				/*绝对定位在其父节点没有设置相对定位的情况下，以浏览器视口的左上角为 0,0 */
+				position: absolute;
+				top: 80px;
+				left: 80px;
+			}
+			
+			
+			/*绝对定位（子绝）和相对定位（夫相）结合使用*/
+			.box:nth-child(3){
+				position: relative;
+			}
+			#s04{
+				position: absolute;
+				top: 80px;
+				left: 80px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" style="background-color: aquamarine;"></div>
+		<div class="box" style="background-color: aqua;">
+			<section id="s02">1</section>
+			<section id="s03">2</section>
+		</div>
+		<div class="box" style="background-color: deepskyblue;">
+			<section id="s04">3</section>
+		</div>
+	</body>
+</html>

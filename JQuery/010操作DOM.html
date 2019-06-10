@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<style>
+			#box{
+				width: 500px;
+				height: 500px;
+				background: yellow;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			#a{
+				width: 400px;
+				height: 400px;
+				background:deepskyblue;
+				margin: 50px auto;
+								overflow: hidden;
+			}
+			#b{
+				width: 300px;
+				height: 300px;
+				background:greenyellow;
+				margin: 50px auto;
+			}						
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="a">
+				<div id="b">
+					<p id="cP">P1</p>
+					<p id="cP2">P2</p>
+					<P id="cP3">P3</P>
+					<p id="cP4">P4</p>
+					<span id="cP5">span1</span>
+					<span id="cP6">span2</span>					
+				</div>
+			</div>
+		</div>
+		<script>
+			//找到父节点
+			console.log($('#cP').parent())
+			console.log($('#cP').parents())
+			//兄弟节点
+			$('#cP2').prev().css('color','orange');
+			$('#cP2').next().css('color','deeppink');
+			console.log($('#cP4').siblings());
+			//find方法需要参数 会根据参数在被选节点的所有子孙节点中查询
+			console.log($('#box').find('div'));
+			console.log($('#box').children());
+			console.log($('#b').children('span'));
+			
+		</script>
+	</body>
+</html>

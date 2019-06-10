@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#gBox{
+				width: 100%;
+				box-sizing: border-box;
+				padding: 20px;
+				background: yellow;
+			}
+			.goods{
+				width: 192px;
+				height: 278px;
+				padding: 3px;
+				/*background: orange;*/
+				border: 1px solid black;
+				background: ghostwhite;
+				/*float: left;*/
+			}
+			.goods h4{
+				line-height: 28px;
+			}
+			.gPic{
+				width: 192px;
+				height: 192px;				
+			}
+			.gInf{
+				font-size: 12px;
+				color: darkgray;
+				line-height: 18px;
+			}
+			.bottom{
+				font-size: 12px;
+				color: deeppink;
+				/*background: green;*/	
+				height:30px ;
+						
+			}
+			.price{
+				font-size: 22px;
+				color: deeppink;
+				float: left;
+				display: inline-block;				
+			}
+			.buy{
+				font-size: 13px;
+				color: white;				
+				border-radius:3px;
+				background: deeppink;
+				float: right;
+				padding: 5px 10px;
+				margin-top: 3px;
+			}
+		</style>
+		<script type="text/javascript" src="js/koala.js" ></script>
+	</head>
+	<body>
+		<div id="gBox">
+				
+		</div>
+		<script>
+			//var str = '<div class="goods"><img src="img/koala/1.jpg" class="gPic"/><h4 class="gName">hhhhhhh</h4><p class="gInf">hjsadhjshdj</p><div class="bottom"><span class="price">￥62</span><div class="buy">立即购买</div></div>			</div>'
+		 //es6 字符串模板
+		 for(var i=0;i<srr.length;i++){
+		 	var oPic = i+1;
+		 	var path = 'img/koala/'+oPic+'.jpg';
+		 	var oName = srr[i].name;
+		 	var oInf = srr[i].inf;
+		 	var oPrice = srr[i].price;
+		 	var str = `<div class="goods">
+							<img src="${path}" class="gPic"/>
+							<h4 class="gName">${oName}</h4>
+							<p class="gInf">${oInf}</p>
+							<div class="bottom">
+								<span class="price">${oPrice}</span>
+								<div class="buy">立即购买</div>
+							</div>			
+					</div>`;
+		  document.getElementById('gBox').innerHTML += str;		
+		 }
+		  console.log( str )
+		</script>
+	</body>
+</html>

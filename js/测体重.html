@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="a" placeholder="输入体重a"/>
+		
+		<input type="text" id="b" placeholder="输入身高b"/>
+		
+		<b style="color: deepskyblue;" id="result"></b>
+		<button id="ok">测试</button>
+		
+		<script>
+			
+			var oBtn = document.getElementById('ok');
+			var oB = document.getElementsByTagName('b')[0];
+			console.log(oB)
+			oBtn.onclick = function(){
+				//input取到的value是字符串
+				var oInput1 = document.getElementById('a').value;
+				var oInput2 = document.getElementById('b').value;
+				console.log(oInput1,oInput2,1);
+				var result = Number(oInput1)-(Number(oInput2)-108)*2;
+				console.log(result);
+				
+				if(result>10){
+					document.write('太胖了')
+				}else if(result<-10){
+					document.write('太瘦了')
+				}else{
+					document.write('正常')
+				}
+			}
+		</script>
+	</body>
+</html>

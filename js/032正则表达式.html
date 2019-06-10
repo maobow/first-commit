@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="int" />
+		<script>
+			
+			//构造函数定义正则表达式
+			var reg01 = new RegExp();
+			//赋值方式创建正则表达式
+			//任意字符
+			var reg02 = /h.o/;
+//			
+//			console.log(reg01,reg02);
+//			console.log(reg02.test('asdffaf'));
+//			console.log(reg02.test('asdffafhagello'));
+//			console.log(reg02.exec('asdffassdsfdsfafhello'));
+			
+			var str = document.getElementById('int');
+			
+			str.onblur = function(){
+				var y = reg02.test(str.value);
+				console.log( y )
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/holder.js"></script>
+		<title></title>
+		<style type="text/css">
+			.row{
+				padding: 15px 15px;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="page-header">欢迎来到标签页</h1>
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#">111</a></li>
+				<li><a href="#">222</a></li>
+				<li><a href="#">333</a></li>
+			</ul>
+			<div class="row">
+				<p>xxxxxxx</p>
+			</div>
+			<div class="row">
+				<p>yyyyyyyyyyyy</p>
+			</div>
+			<div class="row">
+				<p>zzzzzzzzzz</p>
+			</div>
+			
+			<script type="text/javascript">
+				$('li').mouseenter(function(){
+					$(this).addClass('active');//激活鼠标浮上去的标签
+					$('li').not($(this)).removeClass('active');//如果不是鼠标浮上去的标签，清楚激活效果
+					//找到当前的li的id
+					var idx = $(this).index('li');
+					//alert(idx);
+					//如果row的ID与idx的值匹配则显示该标签下的内容
+					$('.row').eq(idx).show();
+					//alert("当前项目的ID="+$('.row').val());
+					//非当前标签下的内容都隐藏
+					
+					$('.row').not($('.row').eq(idx)).hide();
+
+				})
+				//初始化激活的项
+				$('.row').eq(0).show(1000);
+			</script>
+			
+			
+			
+			
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>我是唯一的H1标签</h1>
+		<button class="btn">1</button>
+		<button class="btn">2</button>
+		<button class="btn">3</button>
+		<p id="say" name='ok'>id是1234</p>
+		
+		<script>
+			console.log(document.body.childNodes);
+			consloe.log(document.body.firstChild);
+			var ob=document.createElement('button');
+			ob.innerHTML='动态创建的按钮';
+			console.log(ob)
+			document.body.appendChild(ob)
+			
+			//01.遍历取到数组中的数据
+			//02.每次取到一条数据动态创建h1标签
+			
+			
+			
+			var inf=[
+			{
+				name:"赵四儿",
+				age:48,
+				sex:'男'
+			}
+			{
+				name:"老白",
+				age:26,
+				sex:'男'
+			}
+			{
+				name:"佟湘玉",
+				age:28,
+				sex:'女'
+			}
+			]
+			
+			for(var i = 0;i<inf.length;i++){
+				console.log(inf[i]);
+				var str = inf[i].name+'今年'+inf[i].age 
+				var h = 
+			}
+			
+		</script>
+	</body>
+<html>

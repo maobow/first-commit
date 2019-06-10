@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<style>
+			#father{
+				height: 200px;
+			}
+			#box{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="father">
+			<section id="box"></section>
+		</div>
+		<button id="w">GO</button>
+		<button id="b">BACK</button>
+		<button id="stop">STOP</button>
+		<button id="fadein">IN</button>
+		<button id="fadeout">OUT</button>
+		<button id="togglefade">TOGGLE</button>
+		<button id="up">UP</button>
+		<button id="down">DOWN</button>
+		<script>
+			$('#w').click(function(){
+				//animate(要改变的属性值对象，动画时长，动画效果)
+				$('#box').animate({width:'100%'},'2s','linear',function(){
+					alert(1)})
+			})
+			$('#b').click(function(){
+				//animate(要改变的属性值对象，动画时长，动画效果)
+				$('#box').animate({width:'200px'},'2s','linear',function(){
+					alert(1)})
+			})
+			$('#stop').click(function(){
+				//停止
+				$('#box').stop()
+			})
+			$('#fadein').click(function(){
+				//淡入
+				$('#box').fadeIn()
+			})
+			$('#fadeout').click(function(){
+				//淡出
+				$('#box').fadeOut()
+			})
+			$('#togglefade').click(function(){
+				$('#box').fadeToggle()
+			})
+			
+			$('#up').click(function(){
+				$('#box').slideUp()
+			})
+			$('#down').click(function(){
+				$('#box').slideDown()
+			})
+		</script>
+	</body>
+</html>

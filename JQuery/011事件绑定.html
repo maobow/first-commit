@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+	</head>
+	<body>
+		<button id="ok">OK</button>
+		<div id="box"></div>
+		<script>
+			//bind事件绑定  事件种类 事件传值 函数
+			$('#ok').bind('click',{sayhi:'hello'},function(ev){
+				//ev是事件对象
+				console.log(ev.data)
+				alert(ev.data.sayhi)
+			})
+			
+			//点击 yellow mover green 移走 skyblue
+			
+			$('#ok').bind({
+				click:function(){
+					$('#box').css('backgroundColor','yellow')
+				},
+				mouseover:function(){
+					$('#box').css('backgroundColor','green')
+				},
+				mouseout:function(){
+					$('#box').css('backgroundColor','skyblue')
+				},
+			})
+			//此方法不传参数 一旦使用 所有时间都将会移除
+			$('#box').unbind()
+			$('#box').one('dblclick',{name:'赵四儿'},function(event){
+				alert(event.data.name+'hello')
+			})
+			
+			$('#box').on('click',function(){
+				alert('on')
+			})
+			
+			for(var i = 0;i<3;i++){
+				var btn = '<button class="aa">'+i+'</button>';
+				$(document.body).append(btn)
+			}
+			//on动态绑定事件 祖先级非动态创建节点 .on('事件种类'，'要绑定事件的节点','要传的值'，function)
+			$(document.body).on('click','.aa',function(){
+				alert('动态绑定')
+			})
+		</script>
+	</body>
+</html>
